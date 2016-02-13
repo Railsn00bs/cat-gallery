@@ -22,7 +22,7 @@ controllers
   Manage the interactions between users, models and view
   Glues together the models and the view
 
-view
+view/template
   What you see
 
 REST
@@ -55,17 +55,20 @@ Schema
 Rake
   runs tasks for your ruby code
 
+Form (html)
+  A way for users to put data into the system
+
 
 Our user stories:
 As a cat lover:
-  I want to see lots of cats so that I am happy *
+  I want to see lots of cats so that I am happy * ✓
   I want to discover new cats so I can broaden my cat horizons
   I want to like pictures of cats so I can express my approval
   I want to be able to find a picture I liked later
   I want to see multiple photos of the same cat
 
 As a cat owner:
-  I want to upload pictures of my cat for sweet sweet internet points *
+  I want to upload pictures of my cat for sweet sweet internet points * ✓
 
 
 Models:

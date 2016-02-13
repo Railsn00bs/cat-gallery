@@ -1,5 +1,12 @@
 <h1>All the cats!</h1>
 
-<img src="http://24.media.tumblr.com/tumblr_m3mrqkoCMv1r73wdao1_500.png" />
-<img src="http://24.media.tumblr.com/tumblr_m3vv5xyno71qh28hmo1_500.jpg" />
-<img src="http://25.media.tumblr.com/tumblr_m2qq0qLldt1r6b7kmo1_500.jpg" />
+<% Cat.all.each do |cat| %>
+  <img src='<%= cat.image_url %>'/>
+<% end %>
+
+<%= form_for Cat.new do |f| %>
+  <%= f.label :image_url, 'Cat Url!' %>
+  <%= f.text_field :image_url %>
+
+  <%= f.submit %>
+<% end %>
