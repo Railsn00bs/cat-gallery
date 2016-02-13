@@ -1,0 +1,85 @@
+
+git
+  version control
+
+Class
+  like a blueprint for the objects in our system
+
+Object
+  instance of class
+  you can have a whole bunch of objects that have the same class, and they act alike
+
+models
+  Describes the data that you have
+  Persists our data
+
+  User
+  Cat
+  Like
+
+controllers
+  Makes stuff happen to models
+  Manage the interactions between users, models and view
+  Glues together the models and the view
+
+view
+  What you see
+
+REST
+  actions:
+    index - give you a list of cats
+    create - create a new cat
+    update - update an existing cat
+    destroy - destroy a cat (you monster)
+    show - display a specific cat
+
+MVC
+
+User story
+  Way of describing a chunk of work from a user's perspective so that you know what to build
+
+  Gives you a way of thinking from your user's perspective
+
+Database
+  places to store your data
+
+Table
+  like a spreadsheets
+
+Migration
+  changes the schema of your database
+
+Schema
+  the structure of your database
+
+Rake
+  runs tasks for your ruby code
+
+
+Our user stories:
+As a cat lover:
+  I want to see lots of cats so that I am happy *
+  I want to discover new cats so I can broaden my cat horizons
+  I want to like pictures of cats so I can express my approval
+  I want to be able to find a picture I liked later
+  I want to see multiple photos of the same cat
+
+As a cat owner:
+  I want to upload pictures of my cat for sweet sweet internet points *
+
+
+Models:
+  User
+    id
+    email
+    name
+    password_hash
+    has_many :cats
+
+  Cat
+    id
+    image_url
+    user_id
+    title
+    description
+
