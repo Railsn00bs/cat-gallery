@@ -1,5 +1,13 @@
 <h1>All the cats!</h1>
 
+<%= link_to 'Sign up', new_user_registration_path %>
+<%= link_to 'Sign in', new_user_session_path %>
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+
+<% if user_signed_in? %>
+  <%= link_to 'My cats', {:action => 'my_cats'} %>
+<% end %>
+
 <% Cat.all.each do |cat| %>
   <img src='<%= cat.image_url %>'/>
 <% end %>

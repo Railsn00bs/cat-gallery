@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   root 'cats#index'
+
+  get '/my_cats' => 'cats#my_cats'
 
   post '/cats' => 'cats#create'
 

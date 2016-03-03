@@ -76,7 +76,6 @@ Models:
     id
     email
     name
-    password_hash
     has_many :cats
 
   Cat

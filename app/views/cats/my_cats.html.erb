@@ -1,0 +1,5 @@
+All my cats!
+
+<% current_user.cats.each do |cat| %>
+  <img src='<%= cat.image_url %>'/>
+<% end %>
