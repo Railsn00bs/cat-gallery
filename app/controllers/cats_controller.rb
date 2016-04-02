@@ -8,7 +8,8 @@ class CatsController < ApplicationController
   def create
     Cat.create!(
       :image_url => params[:cat][:image_url],
-      :user => current_user
+      :user => current_user,
+      :image => params[:cat][:image]
     )
 
     redirect_to :action => :index
