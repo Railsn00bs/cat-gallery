@@ -3,6 +3,8 @@ class CatsController < ApplicationController
 
   def index
     # by default, show the user the index view
+    @cat = Cat.new
+    @all_cats = Cat.all
   end
 
   def create

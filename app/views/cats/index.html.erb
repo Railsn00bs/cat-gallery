@@ -1,6 +1,6 @@
 <h1>All the cats!</h1>
 
-<%= form_for Cat.new, html: { multipart: true } do |f| %>
+<%= form_for @cat, html: { multipart: true } do |f| %>
 <%= f.label :image_url, 'Cat Url!' %>
 <%= f.text_field :image_url %>
 <br>
@@ -9,7 +9,7 @@
 <%= f.submit %>
 <% end %>
 
-<% Cat.all.each do |cat| %>
+<% @all_cats.each do |cat| %>
   <%= image_tag cat.image.url(:large) if cat.image? %>
   <%= image_tag cat.image_url if cat.image_url.present? %>
 <% end %>
