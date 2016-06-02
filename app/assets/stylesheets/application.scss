@@ -10,6 +10,31 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ html {
+   padding: 0;
+ }
+
+ footer {
+   margin-top: 70px;
+   min-height: 70px;
+   padding-top: 20px;
+   padding-bottom: 20px;
+ }
+
+ .jumbotron {
+   margin-top: 50px;
+ }
+
+ .notice {
+   padding: 20px;
+ }
+
+ img {
+   max-width: 100%;
+ }

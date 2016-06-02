@@ -1,5 +1,7 @@
 <h1>All my cats!</h1>
 
-<% current_user.cats.each do |cat| %>
-  <img src='<%= cat.image_url %>'/>
-<% end %>
+<div class="jumbotron">
+  <% current_user.cats.each do |cat| %>
+    <img src='<%= cat.image_url %>'/>
+  <% end %>
+</div>

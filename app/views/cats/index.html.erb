@@ -1,15 +1,23 @@
-<h1>All the cats!</h1>
+<h1 class="text-center">All the cats!</h1>
 
 <%= form_for @cat, html: { multipart: true } do |f| %>
-<%= f.label :image_url, 'Cat Url!' %>
-<%= f.text_field :image_url %>
-<br>
-<%= f.label :image, 'Cat Image!' %>
-<%= f.file_field :image %>
-<%= f.submit %>
+  <div class="form-group">
+    <%= f.label :image_url, 'Cat Url!' %>
+    <%= f.text_field :image_url, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image, 'Cat Image!' %>
+    <%= f.file_field :image %>
+    <p class="help-block">You can upload your own photo of a cat instead.</p>
+  </div>
+  <%= f.submit :class => "btn btn-success btn-lg" %>
 <% end %>
 
-<% @all_cats.each do |cat| %>
-  <%= image_tag cat.image.url(:large) if cat.image? %>
-  <%= image_tag cat.image_url if cat.image_url.present? %>
-<% end %>
+<div class="jumbotron container-fluid">
+  <% @all_cats.each do |cat| %>
+    <div class="col-xs-6 col-md-3">
+      <%= image_tag cat.image.url(:large), :class => "thumbnail" if cat.image? %>
+      <%= image_tag cat.image_url, :class => "thumbnail" if cat.image_url.present? %>
+    </div>
+  <% end %>
+</div>
