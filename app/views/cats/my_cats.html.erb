@@ -1,7 +1,14 @@
 <h1>All my cats!</h1>
 
-<div class="jumbotron">
-  <% current_user.cats.each do |cat| %>
-    <img src='<%= cat.image_url %>'/>
-  <% end %>
-</div>
+<% if current_user.cats.any? %>
+  <div class="jumbotron">
+    <% current_user.cats.each do |cat| %>
+      <img src='<%= cat.image_url %>'/>
+    <% end %>
+  </div>
+<% else %>
+  <div class="alert alert-warning" role="alert">
+    Sorry! You don't seem to have any private cats yet.
+    <%= link_to 'Add a new cat!', {:action => 'index'}, :class => "alert-link" %>
+  </div>
+<% end %>

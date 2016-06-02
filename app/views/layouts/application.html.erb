@@ -23,11 +23,12 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
+          <li class="<%= 'active' if current_page?(root_url) %>"><%= link_to 'Home', root_path %></li>
           <% if !user_signed_in? %>
             <li><%= link_to 'Sign up', new_user_registration_path %></li>
             <li><%= link_to 'Sign in', new_user_session_path %></li>
           <% else %>
-            <li><%= link_to 'My cats', {:action => 'my_cats'} %></li>
+            <li class="<%= 'active' if current_page?({:action => 'my_cats'}) %>"><%= link_to 'My cats', {:action => 'my_cats'} %></li>
           <% end %>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -41,9 +42,19 @@
 
   <div class="container">
     <% if notice.present? %>
-      <p class="bg-info notice"><%= notice %></p>
+      <div class="alert alert-info alert-dismissible fade in" role=alert>
+        <button type=button class=close data-dismiss=alert aria-label=Close>
+          <span aria-hidden=true>&times;</span>
+        </button>
+        <%= notice %>
+      </div>
     <% elsif alert.present? %>
-      <p class="bg-danger alert"><%= alert %></p>
+      <div class="alert alert-danger alert-dismissible fade in" role=alert>
+        <button type=button class=close data-dismiss=alert aria-label=Close>
+          <span aria-hidden=true>&times;</span>
+        </button>
+        <%= alert %>
+      </div>
     <% end %>
 
     <%= yield %>
